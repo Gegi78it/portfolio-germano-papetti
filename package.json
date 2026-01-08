@@ -44,11 +44,12 @@
     }
   ],
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint"
-  },
+  "dev": "next dev",
+  "build": "next build",
+  "start": "next start",
+  "lint": "next lint"
+}
+
   "dependencies": {
     "@next/font": "^13.4.4",
     "@skill-icons/react": "^0.0.1",
