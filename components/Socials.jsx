@@ -35,7 +35,10 @@ export const socialData = [
 
 const Socials = () => {
   return (
-    <div className="flex items-center gap-x-6">
+    <div className="
+      flex items-center justify-center xl:justify-start
+      gap-x-4 sm:gap-x-5 md:gap-x-6
+    ">
       {socialData.map((social, i) => (
         <Link
           key={i}
@@ -50,7 +53,12 @@ const Socials = () => {
             alt={social.name}
             width={32}
             height={32}
-            className="w-8 h-8 object-contain"
+            className="
+              w-6 h-6
+              sm:w-7 sm:h-7
+              md:w-8 md:h-8
+              object-contain
+            "
             loading="lazy"
           />
           <span className="sr-only">{social.name}</span>

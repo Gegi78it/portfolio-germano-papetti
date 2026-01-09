@@ -41,36 +41,35 @@ export const aboutData = [
 
   // ---------- COLLABORAZIONI ----------
   {
-  title: "collaborazioni",
-  info: [
-    {
-      title: "Rizzoli (RCS MediaGroup)",
-      stage:
-        "Fotoritocco per diverse testate del gruppo. Attività di marketing e supporto grafico per Max, Amica, IoDonna, Anna, Bravacasa, Oggi, Visto e Novella 2000. Impaginazione per Astra."
-    },
-    {
-      title: "PRS Editore",
-      stage:
-        "Fotoritocco per Novella 2000, Visto e OK Salute. Impaginazione editoriale per Astra e riviste di enigmistica, con particolare attenzione alla collana QN Enigmistica."
-    },
-    {
-      title: "Keesing Italia",
-      stage:
-        "Impaginatore e creatore di giochi per riviste di enigmistica. Realizzazione di contenuti grafici per numeri dedicati alla collana QN Enigmistica."
-    },
-    {
-      title: "Newedit",
-      stage:
-        "Impaginazione completa della rivista Tempi di Guerra, dalla gestione delle pagine alla preparazione per la stampa."
-    },
-    {
-      title: "Bramante srl",
-      stage:
-        "Art director per la linea di riviste Sfida: Sfida Enigmistica, Sfida Sudoku, Sfida Colorare e Sfida Puzzle. Coordinamento del progetto grafico e dei layout."
-    },
-  ],
-},
-
+    title: "collaborazioni",
+    info: [
+      {
+        title: "Rizzoli (RCS MediaGroup)",
+        stage:
+          "Fotoritocco per diverse testate del gruppo. Attività di marketing e supporto grafico per Max, Amica, IoDonna, Anna, Bravacasa, Oggi, Visto e Novella 2000. Impaginazione per Astra.",
+      },
+      {
+        title: "PRS Editore",
+        stage:
+          "Fotoritocco per Novella 2000, Visto e OK Salute. Impaginazione editoriale per Astra e riviste di enigmistica, con particolare attenzione alla collana QN Enigmistica.",
+      },
+      {
+        title: "Keesing Italia",
+        stage:
+          "Impaginatore e creatore di giochi per riviste di enigmistica. Realizzazione di contenuti grafici per numeri dedicati alla collana QN Enigmistica.",
+      },
+      {
+        title: "Newedit",
+        stage:
+          "Impaginazione completa della rivista Tempi di Guerra, dalla gestione delle pagine alla preparazione per la stampa.",
+      },
+      {
+        title: "Bramante srl",
+        stage:
+          "Art director per la linea di riviste Sfida: Sfida Enigmistica, Sfida Sudoku, Sfida Colorare e Sfida Puzzle. Coordinamento del progetto grafico e dei layout.",
+      },
+    ],
+  },
 
   // ---------- FORMAZIONE ----------
   {
@@ -100,23 +99,26 @@ const About = () => {
   const [index, setIndex] = useState(0);
 
   return (
-    <div className="h-full bg-primary/30 py-32 text-center xl:text-left">
+    <div className="h-full bg-primary/30 py-32 text-center xl:text-left relative">
       <Circles />
 
-      {/* avatar (desktop) */}
-      <motion.div
-        variants={fadeIn("right", 0.2)}
-        initial="hidden"
-        animate="show"
-        exit="hidden"
-        className="hidden xl:flex absolute bottom-0 -left-[370px]"
-      >
-        <Avatar />
-      </motion.div>
+      {/* ✅ AVATAR (desktop) – tagliato e spostato a sinistra */}
+      <div className="hidden xl:block absolute left-0 top-0 h-full w-[45%] overflow-hidden pointer-events-none select-none">
+        <motion.div
+          variants={fadeIn("right", 0.2)}
+          initial="hidden"
+          animate="show"
+          exit="hidden"
+          transition={{ duration: 1, ease: "easeInOut" }}
+          className="absolute bottom-0 -left-[380px] w-[900px] h-[900px]"
+        >
+          <Avatar />
+        </motion.div>
+      </div>
 
       <div className="container mx-auto h-full flex flex-col items-center xl:flex-row gap-x-6">
         {/* COLONNA SINISTRA: TITOLO + TESTO + CONTATORI */}
-        <div className="flex-1 flex flex-col justify-center">
+        <div className="flex-1 flex flex-col justify-center relative z-10">
           {/* titolo */}
           <motion.h2
             variants={fadeIn("right", 0.2)}
@@ -138,9 +140,9 @@ const About = () => {
             className="max-w-[500px] mx-auto xl:mx-0 mb-6 xl:mb-12 px-2 xl:px-0"
           >
             Sono un grafico editoriale e Art Director con oltre vent’anni di
-            esperienza in riviste, enigmistica e progetti editoriali. Negli
-            anni ho affiancato alla grafica competenze in marketing, contenuti
-            per il web, social media e formati multimediali.
+            esperienza in riviste, enigmistica e progetti editoriali. Negli anni
+            ho affiancato alla grafica competenze in marketing, contenuti per il
+            web, social media e formati multimediali.
           </motion.p>
 
           {/* CONTATORI */}
@@ -200,7 +202,7 @@ const About = () => {
           initial="hidden"
           animate="show"
           exit="hidden"
-          className="flex flex-col w-full xl:max-w-[48%] h-[480px]"
+          className="flex flex-col w-full xl:max-w-[48%] h-[480px] relative z-10"
         >
           {/* titoli dei tab */}
           <div className="flex gap-x-4 xl:gap-x-8 mx-auto xl:mx-0 mb-4">
