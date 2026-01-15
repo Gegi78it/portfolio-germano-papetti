@@ -11,7 +11,14 @@ const Header = () => {
   const ctaCv = tr("Scarica CV", "Download CV");
 
   return (
-    <header className="fixed top-0 left-0 w-full z-50 bg-transparent">
+    <header
+      className="
+        sticky top-0 z-50 w-full
+        bg-primary/80 backdrop-blur-md border-b border-white/10
+        xl:fixed xl:bg-transparent xl:backdrop-blur-0 xl:border-b-0
+      "
+      style={{ paddingTop: "env(safe-area-inset-top)" }}
+    >
       <div className="container mx-auto">
         <div className="flex flex-col sm:flex-row items-center justify-between gap-y-3 sm:gap-y-0 py-4 sm:py-6">
           {/* LOGO */}
