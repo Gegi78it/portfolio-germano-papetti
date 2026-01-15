@@ -11,10 +11,9 @@ const Header = () => {
   const ctaCv = tr("Scarica CV", "Download CV");
 
   return (
-    <header className="fixed top-0 left-0 w-full z-50 bg-secondary/80 backdrop-blur-md border-b border-white/10">
+    <header className="fixed top-0 left-0 w-full z-50 bg-transparent">
       <div className="container mx-auto">
         <div className="flex flex-col sm:flex-row items-center justify-between gap-y-3 sm:gap-y-0 py-4 sm:py-6">
-
           {/* LOGO */}
           <Link href="/" className="flex items-center justify-center">
             <Image
@@ -53,7 +52,6 @@ const Header = () => {
               <Socials />
             </div>
           </div>
-
         </div>
       </div>
     </header>
