@@ -29,12 +29,18 @@ const Home = () => {
         <link rel="canonical" href="https://gpgraphicdesigner.com/" />
       </Head>
 
-      <div className="bg-primary/60 min-h-screen relative pt-28 pb-28">
+      {/* HERO A SCHERMO INTERO */}
+      <div className="bg-primary/60 h-screen relative overflow-hidden">
         {/* gradient layer */}
         <div className="absolute inset-0 bg-gradient-to-r from-primary/10 via-black/30 to-black/10" />
 
-        {/* content */}
-        <div className="container mx-auto min-h-screen text-center xl:text-left flex flex-col justify-center relative z-10">
+        {/* particles */}
+        <div className="absolute inset-0 z-0">
+          <ParticlesContainer />
+        </div>
+
+        {/* contenuto */}
+        <div className="container mx-auto h-full text-center xl:text-left flex flex-col justify-center relative z-10 pt-28 pb-16">
           {/* TITLE */}
           <motion.h1
             variants={fadeIn("down", 0.2)}
@@ -65,7 +71,7 @@ const Home = () => {
             )}
           </motion.p>
 
-          {/* Projects button (mobile) */}
+          {/* Projects button */}
           <div className="flex justify-center xl:hidden relative z-10">
             <ProjectsBtn />
           </div>
@@ -81,13 +87,8 @@ const Home = () => {
           </motion.div>
         </div>
 
-        {/* particles */}
-        <div className="absolute inset-0 z-0">
-          <ParticlesContainer />
-        </div>
-
-        {/* avatar */}
-        <div className="w-full h-full max-w-[737px] max-h-[678px] absolute -bottom-32 lg:bottom-0 lg:right-[8%] z-10 pointer-events-none">
+        {/* avatar (stabile, non troppo basso) */}
+        <div className="w-full h-full max-w-[737px] max-h-[678px] absolute bottom-0 lg:right-[8%] z-10 pointer-events-none">
           <Avatar />
         </div>
       </div>
