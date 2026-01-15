@@ -41,7 +41,6 @@ const Home = () => {
 
         {/* contenuto */}
         <div className="container mx-auto h-full text-center xl:text-left flex flex-col justify-center relative z-10 pt-28 pb-16">
-          {/* TITLE */}
           <motion.h1
             variants={fadeIn("down", 0.2)}
             initial="hidden"
@@ -57,7 +56,6 @@ const Home = () => {
             </span>
           </motion.h1>
 
-          {/* SUBTITLE */}
           <motion.p
             variants={fadeIn("down", 0.3)}
             initial="hidden"
@@ -71,7 +69,6 @@ const Home = () => {
             )}
           </motion.p>
 
-          {/* Projects button */}
           <div className="flex justify-center xl:hidden relative z-10">
             <ProjectsBtn />
           </div>
@@ -87,8 +84,8 @@ const Home = () => {
           </motion.div>
         </div>
 
-        {/* avatar (stabile, non troppo basso) */}
-        <div className="w-full h-full max-w-[737px] max-h-[678px] absolute bottom-0 lg:right-[8%] z-10 pointer-events-none">
+        {/* ✅ Avatar SOLO desktop/tablet grandi: su mobile lo nascondiamo */}
+        <div className="hidden lg:block w-full h-full max-w-[737px] max-h-[678px] absolute bottom-0 lg:right-[8%] z-10 pointer-events-none">
           <Avatar />
         </div>
       </div>
