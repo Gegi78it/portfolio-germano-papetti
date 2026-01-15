@@ -38,7 +38,10 @@ const Nav = () => {
   const { lang } = useI18n();
 
   return (
-    <nav style={{ paddingBottom: "env(safe-area-inset-bottom)" }} className="flex flex-col items-center xl:justify-center fixed bottom-0 xl:right-[2%] z-40 top-auto xl:top-0 w-full xl:w-16 xl:max-w-md xl:h-screen">
+    <nav
+      style={{ paddingBottom: "env(safe-area-inset-bottom)" }}
+      className="flex flex-col items-center xl:justify-center fixed bottom-0 xl:right-[2%] z-40 top-auto xl:top-0 w-full xl:w-16 xl:max-w-md xl:h-screen"
+    >
       <div className="flex w-full xl:flex-col items-center justify-between xl:justify-center gap-y-10 px-4 md:px-10 xl:px-0 h-[80px] xl:h-max py-8 bg-white/10 backdrop-blur-sm text-3xl xl:text-xl xl:rounded-full">
         {navData.map((link) => (
           <Link
@@ -54,7 +57,7 @@ const Nav = () => {
             <div className="absolute pr-14 right-0 hidden xl:group-hover:flex">
               <div className="bg-white relative flex text-primary items-center p-[6px] rounded-[4px]">
                 <div className="text-[12px] leading-none font-semibold capitalize">
-                  {labels[lang][link.key]}
+                  {labels[lang]?.[link.key] ?? labels.it[link.key]}
                 </div>
                 <div className="border-solid border-l-white border-l-8 border-y-transparent border-y-[6px] border-r-0 absolute -right-2" />
               </div>
@@ -63,7 +66,7 @@ const Nav = () => {
             {/* icon */}
             <Image
               src={link.icon}
-              alt={labels[lang][link.key]}
+              alt={labels[lang]?.[link.key] ?? labels.it[link.key]}
               width={28}
               height={28}
               className="w-7 h-7 xl:w-8 xl:h-8"

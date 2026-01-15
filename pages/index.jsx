@@ -1,5 +1,5 @@
-import { motion } from "framer-motion";
 import Head from "next/head";
+import { motion } from "framer-motion";
 
 import ParticlesContainer from "../components/ParticlesContainer";
 import ProjectsBtn from "../components/ProjectsBtn";
@@ -11,8 +11,12 @@ import { useI18n } from "../lib/i18n.jsx";
 const Home = () => {
   const { tr } = useI18n();
 
-    const pageTitle = tr("Germano Papetti | Graphic Designer & Art Director per Editoria e Digitale", "Germano Papetti | Graphic Designer & Art Director for Editorial & Digital");
-    const desc = tr(
+  const pageTitle = tr(
+    "Germano Papetti | Graphic Designer & Art Director per Editoria e Digitale",
+    "Germano Papetti | Graphic Designer & Art Director for Editorial & Digital"
+  );
+
+  const desc = tr(
     "Portfolio di Germano Papetti, Graphic Designer e Art Director: impaginazione editoriale, art direction, branding, UI/UX, fotoritocco e contenuti digitali.",
     "Portfolio of Germano Papetti, Graphic Designer & Art Director: editorial layout, art direction, branding, UI/UX, photo retouching and digital content."
   );
@@ -42,7 +46,10 @@ const Home = () => {
               <br />
               {tr("in", "into")}{" "}
               <span className="text-accent">
-                {tr("progetti grafici di qualità", "high-quality design projects")}
+                {tr(
+                  "progetti grafici di qualità",
+                  "high-quality design projects"
+                )}
               </span>
             </motion.h1>
 
