@@ -21,15 +21,15 @@
 
 @layer base {
   body {
-    /* ✅ Sfondo scuro per evitare bande grigie sotto la hero */
-    @apply bg-primary overflow-y-auto overflow-x-hidden leading-relaxed;
+    /* ✅ Base: sfondo e testo sempre coerenti (NO bande grigie / NO testo nero) */
+    @apply bg-primary text-white overflow-x-hidden overflow-y-auto leading-relaxed;
   }
 
   .page {
-    @apply w-full min-h-screen overflow-y-auto overflow-x-hidden;
+    @apply w-full min-h-screen overflow-x-hidden overflow-y-auto;
   }
 
-  /* ✅ Manteniamo lo scroll anche su desktop grande */
+  /* ✅ Scroll anche su desktop grande */
   @media (min-width: 1280px) {
     body {
       overflow-y: auto;
@@ -46,9 +46,19 @@
   .h2 {
     @apply text-white text-[35px] leading-tight md:text-[54px] md:leading-[1.3] mb-4 font-semibold;
   }
+
+  /* ✅ Titoli “normali” (se qualche pagina non usa h1/h2) */
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply text-white;
+  }
+
   p {
     @apply leading-[1.8] text-white/60 font-light;
   }
+
   .btn,
   .input {
     @apply h-[52px];

@@ -7,9 +7,13 @@ const Layout = ({ children }) => {
     <>
       <Header />
       <Nav />
-      <main className="min-h-screen">
+
+      {/* ✅ Fondo unico per tutte le pagine interne (niente bande/grigi) */}
+      <main className="min-h-screen bg-primary/30">
         {children}
       </main>
+
+      {/* Se vuoi il footer in futuro lo riattivi */}
       {/* <Footer /> */}
     </>
   );
