@@ -39,52 +39,57 @@ const Home = () => {
         </div>
 
         {/* content */}
-        <div className="container mx-auto min-h-screen text-center xl:text-left flex flex-col justify-center relative z-10 pt-28 pb-24">
-          <motion.h1
-            variants={fadeIn("down", 0.2)}
-            initial="hidden"
-            animate="show"
-            exit="hidden"
-            className="h1"
-          >
-            {tr("Trasformo idee editoriali", "I turn editorial ideas")}
-            <br />
-            {tr("in", "into")}{" "}
-            <span className="text-accent">
-              {tr("progetti grafici di qualità", "high-quality design projects")}
-            </span>
-          </motion.h1>
+        <div className="container mx-auto min-h-screen relative z-10 pt-28 pb-20">
+          <div className="flex flex-col xl:flex-row xl:items-center xl:justify-between gap-10">
+            {/* TESTO */}
+            <div className="flex-1 text-center xl:text-left flex flex-col justify-center">
+              <motion.h1
+                variants={fadeIn("down", 0.2)}
+                initial="hidden"
+                animate="show"
+                exit="hidden"
+                className="h1"
+              >
+                {tr("Trasformo idee editoriali", "I turn editorial ideas")}
+                <br />
+                {tr("in", "into")}{" "}
+                <span className="text-accent">
+                  {tr(
+                    "progetti grafici di qualità",
+                    "high-quality design projects"
+                  )}
+                </span>
+              </motion.h1>
 
-          <motion.p
-            variants={fadeIn("down", 0.3)}
-            initial="hidden"
-            animate="show"
-            exit="hidden"
-            className="max-w-sm xl:max-w-xl mx-auto xl:mx-0 mb-10 xl:mb-16 text-white/85"
-          >
-            {tr(
-              "Grafico editoriale e Art Director con oltre 20 anni di esperienza. Mi occupo di impaginazione periodici, art direction, fotoritocco e contenuti enigmistici. Integro competenze in Social Media Management e SEO per rendere i progetti editoriali più efficaci anche online.",
-              "Editorial designer and Art Director with 20+ years of experience. I work on magazine layout, art direction, photo retouching and puzzle content. I also integrate Social Media Management and SEO to make editorial projects more effective online."
-            )}
-          </motion.p>
+              <motion.p
+                variants={fadeIn("down", 0.3)}
+                initial="hidden"
+                animate="show"
+                exit="hidden"
+                className="max-w-sm xl:max-w-xl mx-auto xl:mx-0 mb-10 xl:mb-14 text-white/85"
+              >
+                {tr(
+                  "Grafico editoriale e Art Director con oltre 20 anni di esperienza. Mi occupo di impaginazione periodici, art direction, fotoritocco e contenuti enigmistici. Integro competenze in Social Media Management e SEO per rendere i progetti editoriali più efficaci anche online.",
+                  "Editorial designer and Art Director with 20+ years of experience. I work on magazine layout, art direction, photo retouching and puzzle content. I also integrate Social Media Management and SEO to make editorial projects more effective online."
+                )}
+              </motion.p>
 
-          {/* button */}
-          <div className="flex justify-center xl:hidden relative z-10">
-            <ProjectsBtn />
+              {/* Bottone progetti */}
+              <div className="flex justify-center xl:justify-start">
+                <ProjectsBtn />
+              </div>
+            </div>
+
+            {/* AVATAR: su mobile/medio sta IN BASSO (nel flusso), su xl sarà gestito fuori */}
+            <div className="xl:hidden w-full flex justify-center">
+              <div className="w-[320px] max-w-[85vw]">
+                <Avatar />
+              </div>
+            </div>
           </div>
-
-          <motion.div
-            variants={fadeIn("up", 0.35)}
-            initial="hidden"
-            animate="show"
-            exit="hidden"
-            className="hidden xl:flex relative z-10"
-          >
-            <ProjectsBtn />
-          </motion.div>
         </div>
 
-        {/* ✅ AVATAR SOLO SU XL (desktop grande) */}
+        {/* AVATAR: su desktop xl rimane assoluto a destra */}
         <div className="hidden xl:block w-full h-full max-w-[737px] max-h-[678px] absolute bottom-0 right-[8%] z-10 pointer-events-none">
           <Avatar />
         </div>
