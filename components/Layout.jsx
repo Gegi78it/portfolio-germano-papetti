@@ -8,8 +8,8 @@ const Layout = ({ children }) => {
       <Header />
       <Nav />
 
-      {/* ✅ padding-top per evitare che l'header fixed copra i contenuti */}
-      <main className="min-h-screen bg-primary/30 pt-28">
+      {/* ✅ page gestisce padding-top globale (così header non copre più) */}
+      <main className="page bg-primary/30">
         {children}
       </main>
 

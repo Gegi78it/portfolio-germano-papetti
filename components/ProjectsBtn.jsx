@@ -11,18 +11,18 @@ const ProjectsBtn = () => {
         title="I miei lavori"
         className="w-full h-full relative flex items-center justify-center bg-circleStar bg-cover bg-center bg-no-repeat group"
       >
-        {/* testo circolare (sotto) */}
-        <div className="absolute inset-0 z-0">
+        {/* testo circolare (leggermente più piccolo + staccato dal bordo) */}
+        <div className="absolute inset-0 z-0 p-[10px]">
           <Image
             src="/rounded-text.png"
             alt="I miei lavori"
             fill
-            className="object-contain animate-spin-slow"
+            className="object-contain animate-spin-slow scale-[0.92]"
             priority
           />
         </div>
 
-        {/* freccia sopra (bianca) */}
+        {/* freccia sopra */}
         <BsArrowRight className="text-white text-3xl relative z-10 group-hover:translate-x-1 transition" />
       </Link>
     </div>

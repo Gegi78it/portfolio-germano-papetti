@@ -29,8 +29,8 @@ const Home = () => {
         <link rel="canonical" href="https://gpgraphicdesigner.com/" />
       </Head>
 
-      {/* HERO A SCHERMO INTERO */}
-      <div className="bg-primary/60 h-screen relative overflow-hidden">
+      {/* ✅ su mobile: min-h-screen + scroll normale, NO overflow-hidden */}
+      <div className="bg-primary/60 min-h-screen relative">
         {/* gradient layer */}
         <div className="absolute inset-0 bg-gradient-to-r from-primary/10 via-black/30 to-black/10" />
 
@@ -40,7 +40,7 @@ const Home = () => {
         </div>
 
         {/* contenuto */}
-        <div className="container mx-auto h-full text-center xl:text-left flex flex-col justify-center relative z-10 pt-28 pb-16">
+        <div className="container mx-auto min-h-screen text-center xl:text-left flex flex-col justify-center relative z-10 pt-28 pb-24">
           <motion.h1
             variants={fadeIn("down", 0.2)}
             initial="hidden"
@@ -84,7 +84,7 @@ const Home = () => {
           </motion.div>
         </div>
 
-        {/* ✅ Avatar SOLO desktop/tablet grandi: su mobile lo nascondiamo */}
+        {/* ✅ avatar: su mobile lo nascondiamo, su desktop ok */}
         <div className="hidden lg:block w-full h-full max-w-[737px] max-h-[678px] absolute bottom-0 lg:right-[8%] z-10 pointer-events-none">
           <Avatar />
         </div>
